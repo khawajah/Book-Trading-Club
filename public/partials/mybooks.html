@@ -1,0 +1,28 @@
+<form ng-submit="add_book()" class="col-md-4 ">
+    <div class="panel panel-info">
+        <div class="panel-heading">Add Book</div>
+        <div class="panel-body">
+            <div class="form-group ">
+                <label for="bookName">Book name</label>
+                <input class="form-control" id="bookName" placeholder="Book name" ng-model="book.name">
+            </div>
+            <div class="form-group">
+                <label for="imgURL">Image URL</label>
+                <input class="form-control" id="imgURL" placeholder="image" ng-model="book.url_img">
+            </div>
+            <button type="submit" value="Add" class="btn btn-primary">ADD</button>
+        </div>
+    </div>
+</form>
+
+<div class="col-md-8 " ng-show="books">
+    <div class="panel panel-info"  >
+        <div class="panel-heading">My Books</div>
+        <div class="panel-body">
+            <div class="col-lg-3 col-md-4 col-xs-6  thumb" ng-repeat="book in books">
+                <img class="img-responsive" ng-src="{{book.url_img}}" alt="book.name">
+                <span class="send_request" ng-click="delete_book(book)"><i class="fa fa-times-circle"></i><span>
+            </div>
+        </div>
+    </div>
+</div>

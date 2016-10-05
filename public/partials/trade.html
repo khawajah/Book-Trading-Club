@@ -1,0 +1,42 @@
+<div class="panel panel-default col-md-offset-2">
+    <div class="panel-heading">You requested</div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Book Name</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="book in yours_request">
+                <td>{{$index + 1}}</td>
+                <td>{{book.name}}</td>
+                <td ng-show="book.request.accepted">Trade accepted</td>
+                <td ng-hide="book.request.accepted">
+                    <button ng-click="delete_trade(book)" type="button" class="btn btn-success btn-sm btn-block">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-default col-md-offset-2">
+    <div class="panel-heading">Requests for you</div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Book Name</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="book in others_request">
+                <td>{{$index + 1}}</td>
+                <td>{{book.name}}</td>
+                <td ng-show="book.request.accepted">Trade accepted</td>
+                <td ng-hide="book.request.accepted">
+                    <button ng-click="accept_trade(book)" type="button" class="btn btn-primary btn-sm " >Accept</button>
+                    <button ng-click="reject_trade(book)" type="button" class="btn btn-success btn-sm " >Reject</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+
+    <div class="col-lg-12">
+        <h1 class="page-header">Book Shelf</h1>
+        <p class="lead">Click on <i class="fa fa-paper-plane"></i> to send a trade request.</p>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-xs-6  thumb" ng-repeat="book in books">
+        <img class="img-responsive" ng-src="{{book.url_img}}" alt="">
+        <span class="send_request" ng-hide="book.created_by == current_user"><i class="fa fa-paper-plane" ng-click="request_book(book)"></i><span>
+    </div>
+
+</div>
